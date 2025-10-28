@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tentang Kami — Borotara Motors</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+
+  <!-- Style Halaman -->
+  <link rel="stylesheet" href="CSS/tentang.css" />
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav-dark navbar-fixed">
+  <div class="nav-inner">
+    <!-- Brand -->
+    <a class="brand" href="#">Borotara Motors</a>
+
+    <!-- Burger button (mobile) -->
+    <button class="nav-toggle" id="navToggle" aria-label="toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Nav links + dropdown -->
+    <nav class="nav-links" id="navMenu">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="layanan.html" class="nav-link">Layanan</a></li>
+        <li><a href="contact.html" class="nav-link">Kontak</a></li>
+        <li><a href="tentang.html" class="nav-link">Tentang Kami</a></li>
+      </ul>
+
+      <!-- login dropdown -->
+      <div class="nav-dropdown">
+        <button class="login-btn" id="loginBtn">
+          Login <span class="chevron">▼</span>
+        </button>
+        <ul class="dropdown-panel" id="loginDropdown">
+          <li><a href="login-admin.html" class="dropdown-item">Admin</a></li>
+          <li><a href="login-driver.html" class="dropdown-item">Driver</a></li>
+          <li><a href="login-teknisi.html" class="dropdown-item">Teknisi</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO SPLIT (ABOUT HERO) -->
+<header class="about-hero">
+  <div class="about-hero-grid">
+    <!-- Kiri -->
+    <div class="about-hero__left">
+      <div class="about-hero__inner">
+        <p class="about-hero__kicker">About Us</p>
+        <h1 class="about-hero__title">
+          Penyedia Layanan<br />
+          Bengkel Berbasis Digital
+        </h1>
+      </div>
+    </div>
+
+    <!-- Kanan -->
+    <figure class="about-hero__image">
+      <img
+        src="https://images.unsplash.com/photo-1517783999520-f068d7431a60?q=80&w=1600"
+        alt="Bengkel Borotara Motors"
+      />
+    </figure>
+  </div>
+</header>
+
+<!-- SECTION DESKRIPSI PERUSAHAAN -->
+<main class="about-section">
+  <div class="about-container">
+    <h2 class="section-title">Borotara Motors</h2>
+
+    <div class="about-columns">
+      <div class="about-col">
+        <p>
+          Borotara Motors adalah bengkel khusus armada travel yang berlokasi
+          di Bandung, hadir sebagai mitra perawatan kendaraan yang andal,
+          efisien, dan terintegrasi secara digital. Kami berkomitmen untuk
+          memberikan layanan servis yang tepat waktu dan menjaga performa
+          kendaraan agar selalu optimal.
+        </p>
+      </div>
+
+      <div class="about-col">
+        <p>
+          Kami memahami bahwa armada travel memiliki ritme operasional yang
+          padat dan tuntutan kenyamanan tinggi. Karena itu, kami menghadirkan
+          layanan bengkel yang dirancang khusus untuk menjaga kelancaran
+          perjalanan dan kepercayaan penumpang Anda.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-divider" aria-hidden="true"></div>
+</main>
+
+<!-- SECTION VISI & MISI -->
+<section class="vm-section">
+  <div class="vm-container">
+    <header class="vm-head">
+      <h2 class="vm-title">
+        Layanan Terbaik, Dimulai dari Tujuan yang Jelas
+      </h2>
+      <p class="vm-sub">
+        Visi dan misi kami mencerminkan komitmen terhadap kualitas,
+        efisiensi, dan dukungan penuh bagi armada travel Anda.
+      </p>
+    </header>
+
+    <div class="vm-grid">
+      <!-- Kartu Visi -->
+      <article class="vm-card">
+        <h3 class="vm-card__title">Visi</h3>
+        <p class="vm-card__text">
+          Menjadi bengkel armada travel terdepan di Bandung yang
+          mengedepankan kualitas, ketepatan, dan kemudahan layanan berbasis
+          digital untuk mendukung kelancaran operasional transportasi
+          darat.
+        </p>
+      </article>
+
+      <!-- Kartu Misi -->
+      <article class="vm-card">
+        <h3 class="vm-card__title">Misi</h3>
+        <ul class="vm-list">
+          <li>
+            Memberikan layanan perawatan dan perbaikan kendaraan travel
+            yang cepat, profesional, dan terpercaya.
+          </li>
+          <li>
+            Mengembangkan sistem servis berbasis aplikasi untuk efisiensi
+            operasional dan transparansi layanan.
+          </li>
+          <li>
+            Menjadi mitra strategis bagi pelaku usaha travel dalam menjaga
+            performa armada dan kepuasan penumpang.
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <!-- Brand / deskripsi -->
+    <div class="footer-col">
+      <div class="footer-brandrow">
+        <div class="footer-logo-icon">🚗</div>
+        <div class="footer-logo-text">Borotara Motors Inc.</div>
+      </div>
+      <p class="footer__text">
+        Solusi servis mobil modern —
+        cepat, transparan, dan terpercaya.
+      </p>
+    </div>
+
+    <!-- Useful Links -->
+    <div class="footer-col">
+      <h4 class="footer__title">Useful Links</h4>
+      <ul class="footer__list">
+        <li><a href="tentang.html#tentang">Tentang Kami</a></li>
+        <li><a href="layanan.html#paket">Paket Servis</a></li>
+        <li><a href="layanan.html#booking">Reservasi Servis</a></li>
+        <li><a href="contact.html">Kontak Kami</a></li>
+        <li><a href="#">Kebijakan Privasi</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div class="footer-col">
+      <h4 class="footer__title">Support</h4>
+      <ul class="footer__list">
+        <li><a href="#">Help Center</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-col">
+      <h4 class="footer__title">Contact Information</h4>
+      <ul class="footer__list footer__contact">
+        <li>📍 Cibaduyut Kidul, Kec. Bojongloa Kidul, Kota Bandung, Jawa Barat 40238</li>
+        <li>✉️ support@borotaramotors.com</li>
+        <li>☎️ 0812-3456-7890</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__copyright">
+    © 2025 Borotara Motors • Semua hak cipta dilindungi.
+  </div>
+</footer>
+
+<script src="JS/tentang.js"></script>
+</body>
+</html>

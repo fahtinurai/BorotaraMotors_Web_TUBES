@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login • Admin</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="CSS/login-common.css" />
+</head>
+<body>
+
+<section class="login-wrapper" style="--login-bg:url('/Assets/LoginAdminPhotos.jpg');">
+  <div class="login-grid">
+
+    <!-- KIRI -->
+    <div class="login-left">
+      <div class="brand-headline">
+        BOROTARA<br />MOTORS
+      </div>
+      <div class="brand-desc">
+        Attention to detail is the key to<br />
+        Passenger Safety &amp; Comfort
+      </div>
+      <div class="brand-footnote">
+        Every Kilometer Count.
+      </div>
+    </div>
+
+    <!-- KANAN -->
+    <div class="login-right-wrapper">
+      <div class="glass-card">
+        <div class="inner-panel">
+          <div class="avatar-container">
+            <div class="avatar-placeholder">
+              <img src="Assets/adminprofile.jpg" alt="Avatar">
+            </div>
+          </div>
+
+          <div class="welcome-text" id="welcomeText">Welcome Admin !</div>
+
+          <div class="field-block">
+            <input type="email" class="custom-input" id="emailInput" placeholder="Email" />
+          </div>
+
+          <div class="field-block password-block">
+            <input type="password" class="custom-input" id="passwordInput" placeholder="Password" />
+            <button class="showpass-btn" id="togglePassBtn" type="button">👁</button>
+          </div>
+
+          <button class="login-btn" id="loginBtn">
+            Log In as Admin
+          </button>
+
+          <div class="signup-hint">
+            Don’t have an account?
+            <a href="#">Sign Up</a>
+          </div>
+
+          <div class="error-msg" id="errorMsg"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="JS/login.js"></script>
+</body>
+</html>

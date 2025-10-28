@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard Admin • Borotara Motors</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/admin-dashboard.css" />
+</head>
+<body>
+
+<!-- NAVBAR ADMIN -->
+<header class="admin-nav">
+  <div class="admin-nav-inner">
+
+    <!-- LOGO KIRI -->
+    <div class="admin-nav-left">
+      <div class="admin-logo">BM</div>
+    </div>
+
+    <!-- MENU TENGAH -->
+    <nav class="admin-nav-center">
+      <ul class="admin-menu">
+        <li><a href="#" class="admin-menu-link">Home</a></li>
+        <li><a href="#" class="admin-menu-link active">Buat Key</a></li>
+        <li><a href="#" class="admin-menu-link">Tambah Data Kendaraan</a></li>
+      </ul>
+    </nav>
+
+    <!-- KANAN -->
+    <div class="admin-nav-right">
+      <button class="logout-btn" id="logoutBtn">Logout</button>
+    </div>
+
+    <!-- burger HP -->
+    <button class="admin-burger" id="adminBurger" aria-label="toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<main class="admin-main">
+
+  <!-- SECTION: FORM BUAT KEY -->
+  <section class="admin-card-form">
+    <h2 class="card-title">Buat Key</h2>
+
+    <div class="form-group">
+      <label class="form-label">Username</label>
+      <input type="text" class="form-input" placeholder="Username" id="keyUsername" />
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Role</label>
+      <select class="form-input" id="keyRole">
+        <option>Admin</option>
+        <option>Driver</option>
+        <option>Teknisi</option>
+      </select>
+    </div>
+
+    <div class="form-row-inline">
+      <div class="flex-grow">
+        <label class="form-label">Key Value</label>
+        <input type="text" class="form-input" placeholder="Key Value" id="keyValue" />
+      </div>
+      <button class="btn-outline" id="generateKeyBtn">Generate Key</button>
+    </div>
+
+    <button class="btn-primary-full" id="submitKeyBtn">Buat Key</button>
+  </section>
+
+  <!-- SECTION: TABEL DAFTAR KEY -->
+  <section class="admin-card-table">
+
+    <div class="table-header-row">
+      <div class="table-search-block">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search by Order ID, Date, Customer"
+          id="searchKeyInput"
+        />
+      </div>
+
+      <button class="filter-btn">
+        <span class="filter-dot"></span>
+        Filter
+      </button>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="key-table">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Key</th>
+            <th class="aksi-col">Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="keyTableBody">
+          <!-- contoh baris dummy -->
+          <tr>
+            <td>admin</td>
+            <td>admin</td>
+            <td>12345</td>
+            <td class="aksi-buttons">
+              <button class="btn-edit">✎ Edit</button>
+              <button class="btn-delete">🗑 Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>rey</td>
+            <td>driver</td>
+            <td>1</td>
+            <td class="aksi-buttons">
+              <button class="btn-edit">✎ Edit</button>
+              <button class="btn-delete">🗑 Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>teknisi</td>
+            <td>teknisi</td>
+            <td>123456</td>
+            <td class="aksi-buttons">
+              <button class="btn-edit">✎ Edit</button>
+              <button class="btn-delete">🗑 Hapus</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+</main>
+
+<script src="JS/admin-dashboard.js"></script>
+</body>
+</html>

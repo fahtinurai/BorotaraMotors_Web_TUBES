@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login • Teknisi</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="CSS/login-common.css" />
+</head>
+<body>
+
+
+<section class="login-wrapper" style="--login-bg:url('/Assets/LoginTeknisiPhotos.jpg');">
+  <div class="login-grid">
+
+    <!-- BAGIAN KIRI -->
+    <div class="login-left">
+      <div class="brand-headline">
+        BOROTARA<br />MOTORS
+      </div>
+      <div class="brand-desc">
+        Precision, maintenance,<br />
+        performance guaranteed.
+      </div>
+      <div class="brand-footnote">
+        Every Kilometer Count.
+      </div>
+    </div>
+
+    <!-- BAGIAN KANAN -->
+    <div class="login-right-wrapper">
+      <div class="glass-card">
+        <div class="inner-panel">
+          <div class="avatar-container">
+            <div class="avatar-placeholder">
+              <!-- ganti sesuai foto teknisi -->
+              <img src="Assets/teknisiprofile2.jpg" alt="Foto Teknisi">
+            </div>
+          </div>
+
+          <!-- default text teknisi -->
+          <div class="welcome-text" id="welcomeText">Welcome Teknisi !</div>
+
+          <div class="field-block">
+            <input
+              type="email"
+              class="custom-input"
+              id="emailInput"
+              placeholder="Email"
+            />
+          </div>
+
+          <div class="field-block password-block">
+            <input
+              type="password"
+              class="custom-input"
+              id="passwordInput"
+              placeholder="Password"
+            />
+            <button
+              class="showpass-btn"
+              id="togglePassBtn"
+              type="button"
+            >👁</button>
+          </div>
+
+          <button class="login-btn" id="loginBtn">
+            Log In as Teknisi
+          </button>
+
+          <div class="signup-hint">
+            Don’t have an account?
+            <a href="#">Sign Up</a>
+          </div>
+
+          <div class="error-msg" id="errorMsg"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="JS/login.js"></script>
+</body>
+</html>

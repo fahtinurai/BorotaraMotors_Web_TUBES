@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontak — Borotara Motors</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- HAPUS bootstrap-icons -->
+
+  <link rel="stylesheet" href="CSS/contact.css" />
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav-dark navbar-fixed">
+  <div class="nav-inner">
+    <!-- Brand -->
+    <a class="brand" href="#">Borotara Motors</a>
+
+    <!-- Burger button (mobile) -->
+    <button class="nav-toggle" id="navToggle" aria-label="toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Nav links + dropdown -->
+    <nav class="nav-links" id="navMenu">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="layanan.html" class="nav-link">Layanan</a></li>
+        <li><a href="contact.html" class="nav-link">Kontak</a></li>
+        <li><a href="tentang.html" class="nav-link">Tentang Kami</a></li>
+      </ul>
+
+      <!-- login dropdown -->
+      <div class="nav-dropdown">
+        <button class="login-btn" id="loginBtn">
+          Login <span class="chevron">▼</span>
+        </button>
+        <ul class="dropdown-panel" id="loginDropdown">
+          <li><a href="login-admin.html" class="dropdown-item">Admin</a></li>
+          <li><a href="login-driver.html" class="dropdown-item">Driver</a></li>
+          <li><a href="login-teknisi.html" class="dropdown-item">Teknisi</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<!-- ================= HERO KONTAK (split 2 kolom) ================= -->
+<main class="contact-hero">
+  <div class="contact-grid">
+    <!-- Panel Kiri -->
+    <section class="contact-panel">
+      <div class="panel-inner">
+        <h1 class="panel-title">Punya Pertanyaan?</h1>
+        <p class="panel-desc">
+          Ini adalah tempat untuk memulai. Temukan jawaban yang Anda butuhkan dari
+          komunitas Borotara Motors atau tim CS kami.
+        </p>
+
+        <div class="link-stack">
+          <a class="contact-link" href="#cs">🎧 Customer Service</a>
+          <a class="contact-link" href="#komunitas">👥 Komunitas Borotara</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel Kanan -->
+    <figure class="contact-media">
+      <img src="/Assets/image 4.png" alt="Customer Service" />
+    </figure>
+  </div>
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <!-- Brand -->
+    <div class="footer-col">
+      <div class="footer-brandrow">
+        <img src="https://svgshare.com/i/13wc.svg" alt="logo" width="28" height="28">
+        <h5 class="footer-brandname">Borotara Motors Inc.</h5>
+      </div>
+      <p class="footer__text">
+        Solusi servis mobil modern — cepat, transparan, dan terpercaya.
+      </p>
+    </div>
+
+    <!-- Useful Links -->
+    <div class="footer-col">
+      <h6 class="footer__title">Useful Links</h6>
+      <ul class="footer__list">
+        <li><a href="#about">Tentang Kami</a></li>
+        <li><a href="#paket">Paket Servis</a></li>
+        <li><a href="#proses">Reservasi Servis</a></li>
+        <li><a href="#lokasi">Kontak Kami</a></li>
+        <li><a href="#">Kebijakan Privasi</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div class="footer-col">
+      <h6 class="footer__title">Support</h6>
+      <ul class="footer__list">
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#lokasi">Contact Us</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="footer-col">
+      <h6 class="footer__title">Contact Information</h6>
+      <ul class="footer__list footer__contact">
+        <li>📍 Cibaduyut Kidul, Kec. Bojongloa Kidul,<br>Kota Bandung, Jawa Barat 40238</li>
+        <li>✉️ support@borotaramotors.com</li>
+        <li>☎️ 0812-3456-7890</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__copyright">
+    © 2025 Borotara Motors • Semua hak cipta dilindungi.
+  </div>
+</footer>
+
+<script src="JS/contact.js"></script>
+</body>
+</html>
