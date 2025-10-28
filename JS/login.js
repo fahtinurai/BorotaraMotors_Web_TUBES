@@ -3,7 +3,7 @@
 // ============================
 const dummyAccounts = {
   admin:   { email: "admin@gmail.com",   password: "admin123" },
-  driver:  { email: "driver",  password: "driver123" },
+  driver:  { email: "driver@gmail.com",  password: "driver123" },
   teknisi: { email: "teknisi", password: "teknisi123" },
 };
 
