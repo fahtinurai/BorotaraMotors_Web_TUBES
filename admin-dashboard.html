@@ -22,11 +22,12 @@
     <!-- MENU TENGAH -->
     <nav class="admin-nav-center">
       <ul class="admin-menu">
-        <li><a href="#" class="admin-menu-link">Home</a></li>
-        <li><a href="#" class="admin-menu-link active">Buat Key</a></li>
-        <li><a href="#" class="admin-menu-link">Tambah Data Kendaraan</a></li>
+        <li><a href="#" class="admin-menu-link active" data-panel="panel-home">Home</a></li>
+        <li><a href="#" class="admin-menu-link" data-panel="panel-buat-key">Buat Key</a></li>
+        <li><a href="#" class="admin-menu-link" data-panel="panel-kendaraan">Tambah Data Kendaraan</a></li>
       </ul>
     </nav>
+
 
     <!-- KANAN -->
     <div class="admin-nav-right">
@@ -42,101 +43,313 @@
 </header>
 
 <main class="admin-main">
+<div class="admin-section-panel active-panel" id="panel-home">
+  <!-- DASHBOARD WRAPPER -->
+  <section class="home-dashboard">
 
-  <!-- SECTION: FORM BUAT KEY -->
-  <section class="admin-card-form">
-    <h2 class="card-title">Buat Key</h2>
+    <!-- ========== TOP STATS CARDS ========== -->
+    <div class="stats-grid">
 
-    <div class="form-group">
-      <label class="form-label">Username</label>
-      <input type="text" class="form-input" placeholder="Username" id="keyUsername" />
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">Role</label>
-      <select class="form-input" id="keyRole">
-        <option>Admin</option>
-        <option>Driver</option>
-        <option>Teknisi</option>
-      </select>
-    </div>
-
-    <div class="form-row-inline">
-      <div class="flex-grow">
-        <label class="form-label">Key Value</label>
-        <input type="text" class="form-input" placeholder="Key Value" id="keyValue" />
+      <div class="stat-card">
+        <div class="stat-head">
+          <span class="stat-label">Driver Aktif</span>
+          <span class="stat-trend stat-up" id="driverTrend">+3%</span>
+        </div>
+        <div class="stat-value" id="driverCount">12</div>
+        <div class="stat-foot">update terakhir 2 jam lalu</div>
       </div>
-      <button class="btn-outline" id="generateKeyBtn">Generate Key</button>
+
+      <div class="stat-card">
+        <div class="stat-head">
+          <span class="stat-label">Teknisi Aktif</span>
+          <span class="stat-trend stat-up" id="techTrend">+1%</span>
+        </div>
+        <div class="stat-value" id="techCount">4</div>
+        <div class="stat-foot">siaga bengkel & lapangan</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-head">
+          <span class="stat-label">Kendaraan Terdaftar</span>
+          <span class="stat-trend stat-stable" id="vehicleTrend">0%</span>
+        </div>
+        <div class="stat-value" id="vehicleCount">9</div>
+        <div class="stat-foot">fleet aktif</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-head">
+          <span class="stat-label">Perlu Perbaikan</span>
+          <span class="stat-trend stat-down" id="repairTrend">-2%</span>
+        </div>
+        <div class="stat-value" id="repairCount">2</div>
+        <div class="stat-foot">butuh follow up teknisi</div>
+      </div>
+
     </div>
 
-    <button class="btn-primary-full" id="submitKeyBtn">Buat Key</button>
+    <!-- ========== MID ROW ========== -->
+    <div class="mid-grid">
+
+      <!-- kiri: status kendaraan -->
+      <div class="panel-card">
+        <div class="panel-card-head">
+          <div>
+            <div class="panel-title">Status Kendaraan</div>
+            <div class="panel-sub">Sistem Operasional Hari Ini</div>
+          </div>
+          <div class="panel-filter-btn">Harian ▾</div>
+        </div>
+
+        <div class="barlist">
+          <div class="barlist-row">
+            <div class="barlist-label">Siap Jalan</div>
+            <div class="barlist-bar">
+              <div class="barlist-fill bar-ready" style="width: 75%"></div>
+            </div>
+            <div class="barlist-val">75%</div>
+          </div>
+
+          <div class="barlist-row">
+            <div class="barlist-label">Sedang Diperbaiki</div>
+            <div class="barlist-bar">
+              <div class="barlist-fill bar-warning" style="width: 15%"></div>
+            </div>
+            <div class="barlist-val">15%</div>
+          </div>
+
+          <div class="barlist-row">
+            <div class="barlist-label">Servis Terjadwal</div>
+            <div class="barlist-bar">
+              <div class="barlist-fill bar-schedule" style="width: 10%"></div>
+            </div>
+            <div class="barlist-val">10%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- kanan: aktivitas tim -->
+      <div class="panel-card">
+        <div class="panel-card-head">
+          <div>
+            <div class="panel-title">Aktivitas Tim</div>
+            <div class="panel-sub">Driver & Teknisi</div>
+          </div>
+          <div class="panel-filter-btn">Bulanan ▾</div>
+        </div>
+
+        <div class="activity-list">
+          <div class="activity-row">
+            <div class="activity-label">Order Selesai Driver</div>
+            <div class="activity-bar">
+              <div class="activity-fill bar-driver" style="width: 60%"></div>
+            </div>
+            <div class="activity-val" id="driverActivityVal">60</div>
+          </div>
+
+          <div class="activity-row">
+            <div class="activity-label">Tiket Servis Ditangani Teknisi</div>
+            <div class="activity-bar">
+              <div class="activity-fill bar-teknisi" style="width: 40%"></div>
+            </div>
+            <div class="activity-val" id="techActivityVal">40</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+</div>
 
-  <!-- SECTION: TABEL DAFTAR KEY -->
-  <section class="admin-card-table">
+  <!-- PANEL: BUAT KEY -->
+  <div class="admin-section-panel" id="panel-buat-key">
+    <!-- FORM BUAT KEY -->
+    <section class="admin-card-form">
+      <h2 class="card-title">Buat Key</h2>
 
-    <div class="table-header-row">
-      <div class="table-search-block">
+      <div class="form-group">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-input" placeholder="Username" id="keyUsername" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Role</label>
+        <select class="form-input" id="keyRole">
+          <option>Admin</option>
+          <option>Driver</option>
+          <option>Teknisi</option>
+        </select>
+      </div>
+
+      <div class="form-row-inline">
+        <div class="flex-grow">
+          <label class="form-label">Key Value</label>
+          <input type="text" class="form-input" placeholder="Key Value" id="keyValue" />
+        </div>
+        <button class="btn-outline" id="generateKeyBtn">Generate Key</button>
+      </div>
+
+      <button class="btn-primary-full" id="submitKeyBtn">Buat Key</button>
+    </section>
+
+    <!-- TABEL DAFTAR KEY -->
+    <section class="admin-card-table">
+      <div class="table-header-row">
+        <div class="table-search-block">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search by Order ID, Date, Customer"
+            id="searchKeyInput"
+          />
+        </div>
+
+        <button class="filter-btn">
+          <span class="filter-dot"></span>
+          Filter
+        </button>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="key-table">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Role</th>
+              <th>Key</th>
+              <th class="aksi-col">Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="keyTableBody">
+            <tr>
+              <td>admin</td>
+              <td>admin</td>
+              <td>12345</td>
+              <td class="aksi-buttons">
+                <button class="btn-edit">✎ Edit</button>
+                <button class="btn-delete">🗑 Hapus</button>
+              </td>
+            </tr>
+            <tr>
+              <td>rey</td>
+              <td>driver</td>
+              <td>1</td>
+              <td class="aksi-buttons">
+                <button class="btn-edit">✎ Edit</button>
+                <button class="btn-delete">🗑 Hapus</button>
+              </td>
+            </tr>
+            <tr>
+              <td>teknisi</td>
+              <td>teknisi</td>
+              <td>123456</td>
+              <td class="aksi-buttons">
+                <button class="btn-edit">✎ Edit</button>
+                <button class="btn-delete">🗑 Hapus</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- PANEL: TAMBAH DATA KENDARAAN -->
+  <div class="admin-section-panel" id="panel-kendaraan">
+    <!-- FORM TAMBAH KENDARAAN -->
+    <section class="admin-card-form" id="vehicleFormCard">
+      <h2 class="card-title">Tambah Kendaraan</h2>
+
+      <div class="form-group">
+        <label class="form-label">Merek Kendaraan</label>
         <input
           type="text"
-          class="search-input"
-          placeholder="Search by Order ID, Date, Customer"
-          id="searchKeyInput"
+          class="form-input"
+          placeholder="Merek Kendaraan"
+          id="vehicleBrand"
         />
       </div>
 
-      <button class="filter-btn">
-        <span class="filter-dot"></span>
-        Filter
-      </button>
-    </div>
+      <div class="form-group">
+        <label class="form-label">Plat Nomor</label>
+        <input
+          type="text"
+          class="form-input"
+          placeholder="B 1234 ASD"
+          id="vehiclePlate"
+        />
+        <small class="hint-plate">
+          Format wajib: 1 huruf • spasi • 4 angka • spasi • 3 huruf kapital
+          (contoh: B 1234 ASD)
+        </small>
+        <div class="error-inline" id="vehicleError"></div>
+      </div>
 
-    <div class="table-wrapper">
-      <table class="key-table">
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Role</th>
-            <th>Key</th>
-            <th class="aksi-col">Aksi</th>
-          </tr>
-        </thead>
-        <tbody id="keyTableBody">
-          <!-- contoh baris dummy -->
-          <tr>
-            <td>admin</td>
-            <td>admin</td>
-            <td>12345</td>
-            <td class="aksi-buttons">
-              <button class="btn-edit">✎ Edit</button>
-              <button class="btn-delete">🗑 Hapus</button>
-            </td>
-          </tr>
-          <tr>
-            <td>rey</td>
-            <td>driver</td>
-            <td>1</td>
-            <td class="aksi-buttons">
-              <button class="btn-edit">✎ Edit</button>
-              <button class="btn-delete">🗑 Hapus</button>
-            </td>
-          </tr>
-          <tr>
-            <td>teknisi</td>
-            <td>teknisi</td>
-            <td>123456</td>
-            <td class="aksi-buttons">
-              <button class="btn-edit">✎ Edit</button>
-              <button class="btn-delete">🗑 Hapus</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <button class="btn-primary-full" id="addVehicleBtn">Tambah Kendaraan</button>
+    </section>
 
-  </section>
+    <!-- TABEL KENDARAAN -->
+    <section class="admin-card-table" id="vehicleTableCard">
+      <div class="table-header-row">
+        <div class="table-search-block">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search by Order ID, Date, Customer"
+            id="vehicleSearchInput"
+          />
+        </div>
+
+        <button class="filter-btn">
+          <span class="filter-dot"></span>
+          Filter
+        </button>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="key-table" id="vehicleTable">
+          <thead>
+            <tr>
+              <th>Merek Kendaraan</th>
+              <th>Plat Nomor</th>
+              <th class="aksi-col">Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="vehicleTableBody">
+            <tr>
+              <td>Toyota</td>
+              <td>AB 123 CD</td>
+              <td class="aksi-buttons">
+                <button class="btn-edit">✎ Edit</button>
+                <button class="btn-delete">🗑 Hapus</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Honda</td>
+              <td>EF 456 GH</td>
+              <td class="aksi-buttons">
+                <button class="btn-edit">✎ Edit</button>
+                <button class="btn-delete">🗑 Hapus</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>BMW</td>
+              <td>XY 789 ZT</td>
+              <td class="aksi-buttons">
+                <button class="btn-edit">✎ Edit</button>
+                <button class="btn-delete">🗑 Hapus</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
 
 </main>
+
 
 <script src="JS/admin-dashboard.js"></script>
 </body>
