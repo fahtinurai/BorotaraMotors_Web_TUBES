@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard Driver • Borotara Motors</title>
+  <link rel="stylesheet" href="CSS/driver-dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body class="driver-body">
+
+  <!-- NAVBAR -->
+  <header class="driver-nav">
+    <div class="driver-nav-inner">
+
+      <div class="driver-brand">
+        <!-- Pakai inisial atau logo -->
+        <span class="driver-logo">BM</span>
+      </div>
+
+      <nav class="driver-nav-center">
+        <ul class="driver-menu">
+          <li><a href="#" class="driver-menu-link active" data-panel="panel-form">Home</a></li>
+          <li><a href="#" class="driver-menu-link" data-panel="panel-form">Laporan Kerusakan</a></li>
+        </ul>
+      </nav>
+
+      <div class="driver-nav-right">
+        <button class="logout-btn" id="logoutBtnDriver">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="driver-main">
+
+    <!-- FORM TAMBAH KERUSAKAN -->
+    <section class="card driver-form-card" id="panel-form">
+      <h2 class="card-title">Tambah Kerusakan</h2>
+
+      <div class="form-row-plate">
+        <input
+          id="plateSearchInput"
+          type="text"
+          class="text-input"
+          placeholder="Plat Nomor (contoh: B 1234 ASD)" />
+        <button id="searchPlateBtn" class="btn btn-blue btn-small">Search</button>
+      </div>
+
+      <div class="field-block">
+        <input
+          id="brandInput"
+          type="text"
+          class="text-input"
+          placeholder="Merek Kendaraan"
+          readonly />
+      </div>
+
+      <div class="field-block">
+        <input
+          id="issueInput"
+          type="text"
+          class="text-input"
+          placeholder="Kendala" />
+      </div>
+
+      <div class="field-block">
+        <textarea
+          id="noteInput"
+          class="text-input textarea"
+          placeholder="Catatan"></textarea>
+      </div>
+
+      <div id="driverError" class="error-text"></div>
+
+      <button id="addReportBtn" class="btn btn-blue btn-full">
+        Tambah Laporan
+      </button>
+    </section>
+
+    <!-- TABEL LAPORAN -->
+    <section class="card driver-table-card">
+      <div class="table-head-row">
+        <div class="table-head-left">
+          <strong>Daftar Kerusakan</strong>
+        </div>
+        <div class="table-head-right">
+          <input
+            id="searchReportInput"
+            class="table-search-input"
+            placeholder="Search by Plat, Kendala, Catatan" />
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Merek Kendaraan</th>
+              <th>Plat Nomor</th>
+              <th>Kendala</th>
+              <th>Catatan</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="reportTableBody">
+            <!-- baris data akan di-render lewat JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="JS/driver-dashboard.js"></script>
+</body>
+</html>
