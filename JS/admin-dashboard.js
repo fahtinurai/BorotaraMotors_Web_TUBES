@@ -180,7 +180,7 @@ if (homeGenKeyBtn && homeUserKey) {
       ? "TEK"
       : "KEY";
     const randomPart = Math.floor(10000 + Math.random() * 90000);
-    homeUserKey.value = ${prefix}-${randomPart};
+    homeUserKey.value = `${prefix}-${randomPart}`;
   });
 }
 
@@ -398,7 +398,7 @@ if (keyTableBody) {
 }
 
 // ==============================
-// PANEL KENDARAAN
+// PANEL KENDARAAN TAHTA
 // ==============================
 const vehicleBrandInput   = document.getElementById("vehicleBrand");
 const vehiclePlateInput   = document.getElementById("vehiclePlate");
@@ -574,7 +574,7 @@ function renderAssignFormOptions() {
   allVehicles.forEach(v => {
     const opt = document.createElement("option");
     opt.value = v.plate;
-    opt.textContent = ${v.plate} • ${v.brand};
+    opt.textContent = `${v.plate} • ${v.brand}`;
     assignVehicleSelect.appendChild(opt);
   });
 }
@@ -660,7 +660,7 @@ if (assignTableBody) {
     const userFor  = e.target.getAttribute("data-user");
     const plateFor = e.target.getAttribute("data-plate");
 
-    const yakin = confirm(Hapus assign ${plateFor} dari ${userFor}?);
+    const yakin = confirm(`Hapus assign ${plateFor} dari ${userFor}?`);
     if (!yakin) return;
 
     let data = loadDriverVehicles();
@@ -692,7 +692,7 @@ function formatDateTime(isoString) {
   const hh   = pad(d.getHours());
   const mi   = pad(d.getMinutes());
 
-  return ${yyyy}-${mm}-${dd} ${hh}:${mi};
+  return `${yyyy}-${mm}-${dd} ${hh}:${mi}`;
 }
 
 // tabel tiket yg statusTeknisi === "butuh_follow_up"
