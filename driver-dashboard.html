@@ -4,8 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Dashboard Driver • Borotara Motors</title>
-  <link rel="stylesheet" href="CSS/driver-dashboard.css" />
+
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+  <!-- Icon (opsional untuk bell/icon lain) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LL6eZ9C1b2hVf1Yx4nC5MhjYVd5bOZy5SXicY1l9N6V0F2l9oT9XH6N7x+YF6GZmw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="CSS/driver-dashboard.css" />
 </head>
 <body class="driver-body">
 
@@ -13,28 +25,93 @@
   <header class="driver-nav">
     <div class="driver-nav-inner">
 
-      <div class="driver-brand">
-        <!-- Pakai inisial atau logo -->
-        <span class="driver-logo">BM</span>
+      <!-- KIRI: LOGO / BRAND -->
+      <div class="driver-nav-left">
+        <div class="driver-logo">BM</div>
+
+        <!-- BURGER (muncul di mobile) -->
+        <button class="driver-burger" id="driverBurger" aria-label="Toggle menu">
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+        </button>
       </div>
 
+      <!-- TENGAH: MENU -->
       <nav class="driver-nav-center">
         <ul class="driver-menu">
-          <li><a href="#" class="driver-menu-link active" data-panel="panel-form">Home</a></li>
-          <li><a href="#" class="driver-menu-link" data-panel="panel-form">Laporan Kerusakan</a></li>
+          <li>
+            <a href="#" class="driver-menu-link active" data-panel="panel-home">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" class="driver-menu-link" data-panel="panel-form">
+              Laporan Kerusakan
+            </a>
+          </li>
         </ul>
       </nav>
 
+      <!-- KANAN: PROFIL + LOGOUT -->
       <div class="driver-nav-right">
-        <button class="logout-btn" id="logoutBtnDriver">Logout</button>
+        <button class="notif-btn" id="notifBtn" aria-label="Notifikasi">
+          <i class="fa-solid fa-bell"></i>
+          <span class="notif-dot" id="notifDot" style="display:none;"></span>
+        </button>
+
+        <div class="driver-profile" id="driverProfileBox">
+          <div class="driver-avatar" id="driverAvatar">DR</div>
+          <div class="driver-profile-text">
+            <div class="driver-name" id="driverNameTop">Driver</div>
+            <div class="driver-key" id="driverKeyTop">Key: -</div>
+          </div>
+        </div>
+
+        <button class="driver-logout-btn" id="logoutBtnDriver">
+          Logout
+        </button>
       </div>
+
     </div>
   </header>
 
+
   <main class="driver-main">
 
-    <!-- FORM TAMBAH KERUSAKAN -->
-    <section class="card driver-form-card" id="panel-form">
+    <!-- =======================
+         SALAM / GREETING CARD
+         ======================= -->
+    <section class="driver-greeting-card driver-section-panel active-panel" id="panel-home">
+      <div class="greeting-left">
+        <h2 id="driverGreeting">Selamat Datang, Driver!</h2>
+        <p id="driverKeyDisplay">Key Anda: -</p>
+      </div>
+
+      <div class="greeting-right">
+        <div class="stats-row">
+          <div class="stat-box">
+            <strong id="statTotalBulan">0</strong>
+            <span>Laporan Bulan Ini</span>
+          </div>
+          <div class="stat-box">
+            <strong id="statTotalSemua">0</strong>
+            <span>Total Laporan</span>
+          </div>
+        </div>
+
+        <div class="quick-actions">
+          <button class="btn btn-blue" data-open-panel="panel-form">
+            + Tambah Laporan
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+         FORM TAMBAH KERUSAKAN
+         ======================= -->
+    <section class="card driver-form-card driver-section-panel" id="panel-form">
       <h2 class="card-title">Tambah Kerusakan</h2>
 
       <div class="form-row-plate">
@@ -46,7 +123,7 @@
         <button id="searchPlateBtn" class="btn btn-blue btn-small">Search</button>
       </div>
 
-      <div class="field-block">
+      <div class="field-block" data-icon="🚗">
         <input
           id="brandInput"
           type="text"
@@ -55,7 +132,7 @@
           readonly />
       </div>
 
-      <div class="field-block">
+      <div class="field-block" data-icon="⚠️">
         <input
           id="issueInput"
           type="text"
@@ -63,7 +140,7 @@
           placeholder="Kendala" />
       </div>
 
-      <div class="field-block">
+      <div class="field-block" data-icon="📝">
         <textarea
           id="noteInput"
           class="text-input textarea"
@@ -77,7 +154,9 @@
       </button>
     </section>
 
-    <!-- TABEL LAPORAN -->
+    <!-- =======================
+         TABEL LAPORAN
+         ======================= -->
     <section class="card driver-table-card">
       <div class="table-head-row">
         <div class="table-head-left">
@@ -99,11 +178,12 @@
               <th>Plat Nomor</th>
               <th>Kendala</th>
               <th>Catatan</th>
+              <th>Status Perbaikan</th> 
+              <th>Catatan Teknisi</th>        
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody id="reportTableBody">
-            <!-- baris data akan di-render lewat JS -->
           </tbody>
         </table>
       </div>
