@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<!-- NAVBAR ADMIN -->
+<!-- PANEL NAVBAR ADMIN -->
 <header class="admin-nav">
   <div class="admin-nav-inner">
 
@@ -25,6 +25,8 @@
         <li><a href="#" class="admin-menu-link active" data-panel="panel-home">Home</a></li>
         <li><a href="#" class="admin-menu-link" data-panel="panel-buat-key">Buat Key</a></li>
         <li><a href="#" class="admin-menu-link" data-panel="panel-kendaraan">Tambah Data Kendaraan</a></li>
+        <li><a href="#" class="admin-menu-link" data-panel="panel-assign">Assign Kendaraan</a></li>
+        <li><a href="#" class="admin-menu-link" data-panel="panel-followup">Follow Up Teknisi</a></li>
       </ul>
     </nav>
 
@@ -77,15 +79,17 @@
         <div class="stat-foot">fleet aktif</div>
       </div>
 
-      <div class="stat-card">
-        <div class="stat-head">
-          <span class="stat-label">Perlu Perbaikan</span>
-          <span class="stat-trend stat-down" id="repairTrend">-2%</span>
+      <div class="home-card small-card">
+        <div class="card-top-row">
+          <div class="card-title">Perlu Perbaikan</div>
+          <div class="card-badge warn">-2%</div>
         </div>
-        <div class="stat-value" id="repairCount">2</div>
-        <div class="stat-foot">butuh follow up teknisi</div>
-      </div>
+        <div class="card-main-metric" id="followUpCountHome">0</div>
+        <div class="card-subtext">butuh follow up teknisi</div>
 
+        <!-- optional: tombol cepat buat loncat ke panel follow up -->
+        <button class="card-link-btn" id="gotoFollowUpBtn">Lihat Follow Up</button>
+      </div>
     </div>
 
     <!-- ========== MID ROW ========== -->
@@ -160,7 +164,7 @@
   </section>
 </div>
 
-  <!-- PANEL: BUAT KEY -->
+  <!-- PANEL BUAT KEY -->
   <div class="admin-section-panel" id="panel-buat-key">
     <!-- FORM BUAT KEY -->
     <section class="admin-card-form">
@@ -254,7 +258,7 @@
   </div>
 
 
-  <!-- PANEL: TAMBAH DATA KENDARAAN -->
+  <!-- PANEL TAMBAH DATA KENDARAAN -->
   <div class="admin-section-panel" id="panel-kendaraan">
     <!-- FORM TAMBAH KENDARAAN -->
     <section class="admin-card-form" id="vehicleFormCard">
@@ -348,8 +352,85 @@
     </section>
   </div>
 
-</main>
+      <!-- PANEL ASSIGN KENDARAAN KE DRIVER -->
+    <div class="admin-section-panel" id="panel-assign">
+      <!-- FORM ASSIGN -->
+      <section class="admin-card-form">
+        <h2 class="card-title">Assign Kendaraan ke Driver</h2>
 
+        <div class="form-group">
+          <label class="form-label">Pilih Driver</label>
+          <select class="form-input" id="assignDriverSelect"></select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Pilih Kendaraan</label>
+          <select class="form-input" id="assignVehicleSelect"></select>
+        </div>
+
+        <button class="btn-primary-full" id="assignBtn">Assign Kendaraan</button>
+        <div class="error-inline" id="assignError"></div>
+      </section>
+
+      <!-- TABEL DAFTAR ASSIGN -->
+      <section class="admin-card-table">
+        <div class="table-header-row">
+          <div class="panel-title">Daftar Kendaraan per Driver</div>
+        </div>
+        <div class="table-wrapper">
+          <table class="key-table">
+            <thead>
+              <tr>
+                <th>Driver</th>
+                <th>Plat</th>
+                <th>Merek</th>
+                <th class="aksi-col">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="assignTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+ <!-- PANEL FOLLOWUP -->
+    <div class="admin-section-panel" id="panel-followup">
+  <section class="followup-card">
+    <div class="followup-card__header">
+      <div class="followup-card__title-area">
+        <div class="followup-card__title">Butuh Follow Up Teknisi</div>
+        <div class="followup-card__subtitle">Ticket yang meminta aksi admin</div>
+      </div>
+
+      <div class="followup-card__search-area">
+        <input
+          id="followSearchInput"
+          class="followup-search-input"
+          placeholder="Cari plat / kendala / driver..." />
+      </div>
+    </div>
+
+    <div class="followup-table-wrapper">
+      <table class="followup-table">
+        <thead>
+          <tr>
+            <th>ID Ticket</th>
+            <th>Plat</th>
+            <th>Merek</th>
+            <th>Kendala</th>
+            <th>Driver</th>
+            <th>Kebutuhan Driver</th>
+            <th>Catatan Teknisi</th>
+            <th>Last Update</th>
+          </tr>
+        </thead>
+        <tbody id="followTableBody">
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+</main>
 
 <script src="JS/admin-dashboard.js"></script>
 </body>
