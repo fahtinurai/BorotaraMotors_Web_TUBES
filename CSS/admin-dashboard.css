@@ -916,4 +916,143 @@ body {
   display: block;
 }
 
+/* ---------- FOLLOW UP TEKNISI PANEL ---------- */
 
+.followup-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow:
+    0 24px 40px -8px rgba(16, 24, 40, 0.08),
+    0 4px 8px rgba(16, 24, 40, 0.03);
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1.25rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.followup-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.followup-card__title-area {
+  min-width: 200px;
+}
+
+.followup-card__title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.3;
+}
+
+.followup-card__subtitle {
+  font-size: 0.8rem;
+  color: #6b7280;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.followup-card__search-area {
+  flex-shrink: 0;
+  min-width: 240px;
+}
+
+.followup-search-input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  color: #111827;
+  outline: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+.followup-search-input::placeholder {
+  color: #9ca3af;
+}
+.followup-search-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+/* Table wrapper */
+.followup-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.03);
+}
+
+/* Table itself */
+.followup-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.followup-table thead tr {
+  background-color: #f9fafb;
+}
+
+.followup-table thead th {
+  text-align: left;
+  font-weight: 600;
+  color: #111827;
+  padding: 0.75rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+
+.followup-table tbody td {
+  vertical-align: top;
+  color: #1f2937;
+  padding: 0.75rem 0.75rem;
+  border-bottom: 1px solid #f3f4f6;
+  min-width: 100px;
+  word-break: break-word;
+  white-space: normal;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+}
+
+/* Biarkan kolom ID ticket keliatan gabungan dua baris dengan lebih halus */
+.followup-table tbody td:first-child {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #374151;
+  line-height: 1.2rem;
+}
+
+/* Kolom Last Update kita rapikan jadi rata kanan sedikit */
+.followup-table tbody td:last-child {
+  white-space: nowrap;
+  min-width: 110px;
+}
+
+/* Responsive tweak untuk layar kecil */
+@media (max-width: 640px) {
+  .followup-card {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .followup-card__header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .followup-card__search-area {
+    width: 100%;
+  }
+}
