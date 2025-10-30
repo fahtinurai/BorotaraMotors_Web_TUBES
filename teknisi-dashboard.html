@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <title>Teknisi Dashboard</title>
+
+  <link rel="stylesheet" href="CSS/teknisi-dashboard.css" />
+
+</head>
+
+<body>
+
+  <header class="tech-header">
+
+    <div class="tech-header-left">
+
+      <button class="burger-btn" id="techBurger">☰</button>
+
+      <div class="tech-brand">
+
+        <div class="tech-logo">TK</div>
+
+        <div class="tech-brand-text">
+
+          <div class="tech-app-name">Panel Teknisi</div>
+
+          <div class="tech-role-label">Maintenance & Repair</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <nav class="tech-nav-center">
+
+      <ul class="tech-menu">
+
+        <li><a href="#" class="tech-menu-link active" data-panel="panel-jobs">Daftar Pekerjaan</a></li>
+
+        <li><a href="#" class="tech-menu-link" data-panel="panel-detail">Detail / Update Status</a></li>
+
+      </ul>
+
+    </nav>
+
+
+
+    <div class="tech-header-right">
+
+      <div class="tech-profile">
+
+        <div class="tech-avatar" id="techAvatar">TK</div>
+
+        <div class="tech-profile-text">
+
+          <div class="tech-name" id="techNameTop">Teknisi</div>
+
+          <div class="tech-key" id="techKeyTop">Key: -</div>
+
+        </div>
+
+      </div>
+
+      <button class="tech-logout-btn" id="techLogoutBtn">Logout</button>
+
+    </div>
+
+  </header>
+
+
+
+  <main class="tech-main">
+
+
+
+    <!-- PANEL: JOB LIST -->
+
+    <section class="tech-section-panel active-panel" id="panel-jobs">
+
+      <section class="tech-card-stats">
+
+        <div class="stat-box">
+
+          <div class="stat-value" id="countWaiting">0</div>
+
+          <div class="stat-label">Menunggu</div>
+
+        </div>
+
+        <div class="stat-box">
+
+          <div class="stat-value" id="countProcess">0</div>
+
+          <div class="stat-label">Proses</div>
+
+        </div>
+
+        <div class="stat-box">
+
+          <div class="stat-value" id="countFollow">0</div>
+
+          <div class="stat-label">Butuh Follow Up</div>
+
+        </div>
+
+        <div class="stat-box">
+
+          <div class="stat-value" id="countDone">0</div>
+
+          <div class="stat-label">Selesai</div>
+
+        </div>
+
+      </section>
+
+
+
+      <section class="tech-card-table">
+
+        <div class="table-header-row">
+
+          <div class="panel-title">Daftar Pekerjaan Masuk</div>
+
+          <input id="jobSearchInput" class="search-input" placeholder="Cari plat / kendala / driver..." />
+
+        </div>
+
+
+
+        <div class="table-wrapper">
+
+          <table class="job-table">
+
+            <thead>
+
+              <tr>
+
+                <th>Plat</th>
+
+                <th>Merek</th>
+
+                <th>Kendala</th>
+
+                <th>Catatan Driver</th>
+
+                <th>Driver</th>
+
+                <th>Status</th>
+
+                <th class="aksi-col">Aksi</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody id="jobTableBody">
+
+              <!-- diisi JS -->
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </section>
+
+
+
+    <!-- PANEL: DETAIL / UPDATE STATUS -->
+
+    <section class="tech-section-panel" id="panel-detail">
+
+      <section class="tech-card-form">
+
+        <h2 class="card-title">Detail Pekerjaan & Update Status</h2>
+
+
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label class="form-label">ID Ticket</label>
+
+            <input id="ticketIdInput" class="form-input" placeholder="-" disabled />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+            <label class="form-label">Plat Nomor</label>
+
+            <input id="ticketPlateInput" class="form-input" placeholder="-" disabled />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+            <label class="form-label">Merek Kendaraan</label>
+
+            <input id="ticketBrandInput" class="form-input" placeholder="-" disabled />
+
+          </div>
+
+
+
+          <div class="form-group">
+
+            <label class="form-label">Driver</label>
+
+            <input id="ticketDriverInput" class="form-input" placeholder="-" disabled />
+
+          </div>
+
+
+
+          <div class="form-group wide">
+
+            <label class="form-label">Kendala / Kerusakan</label>
+
+            <textarea id="ticketIssueInput" class="form-input text-area" rows="2" disabled></textarea>
+
+          </div>
+
+
+
+          <div class="form-group wide">
+
+            <label class="form-label">Permintaan Tambahan dari Driver</label>
+
+            <textarea id="ticketExtraInput" class="form-input text-area" rows="2" disabled></textarea>
+
+          </div>
+
+
+
+          <div class="form-group wide">
+
+            <label class="form-label">Catatan Teknisi / Progres</label>
+
+            <textarea id="ticketTechNoteInput" class="form-input text-area" rows="3" placeholder="Contoh: Sudah bongkar AC, nunggu spare part..."></textarea>
+
+          </div>
+
+
+
+          <div class="form-group">
+
+            <label class="form-label">Status Perbaikan</label>
+
+            <select id="ticketStatusSelect" class="form-input">
+
+              <option value="menunggu">Menunggu</option>
+
+              <option value="proses">Proses</option>
+
+              <option value="selesai">Selesai</option>
+
+              <option value="butuh_follow_up">Butuh Follow Up Admin</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+
+        <button id="saveTicketBtn" class="btn-primary-full">Simpan Update</button>
+
+        <div id="techFormError" class="error-inline"></div>
+
+      </section>
+
+
+
+      <section class="tech-card-miniinfo">
+
+        <div class="mini-title">Keterangan Status</div>
+
+        <ul class="mini-list">
+
+          <li><b>Menunggu</b>: Belum dikerjakan</li>
+
+          <li><b>Proses</b>: Sedang dikerjakan teknisi</li>
+
+          <li><b>Selesai</b>: Sudah diperbaiki</li>
+
+          <li><b>Butuh Follow Up Admin</b>: Perlu persetujuan/pengadaan dari admin</li>
+
+        </ul>
+
+      </section>
+
+    </section>
+
+  </main>
+
+
+
+  <script src="JS/teknisi-dashboard.js"></script>
+
+</body>
+
+</html>
