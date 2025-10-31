@@ -287,4 +287,8 @@ if (saveTicketBtn) {
 
 // INIT
 renderTeknisiHeader();
+
 renderJobTable();
+
+renderJobTable();
+
